@@ -1,0 +1,28 @@
+{
+  "name": "src2qiniu",
+  "version": "0.1.0",
+  "description": "save image from web to qiniu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ltebean/src2qiniu"
+  },
+  "keywords": [
+    "qiniu"
+  ],
+  "author": "ltebean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ltebean/src2qiniu/issues"
+  },
+  "homepage": "https://github.com/ltebean/src2qiniu",
+  "dependencies":{
+    "qiniu": "^6.1.3",
+    "http-get": "^0.5.10",
+    "async": "^0.9.0",
+    "mkdirp": "^0.5.0"
+  }
+}
