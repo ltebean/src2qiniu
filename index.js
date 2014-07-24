@@ -14,7 +14,6 @@ function getHome() {
   return path.join(home, '.src2qiniu');
 }
 
-
 function uptoken() {
   var putPolicy = new qiniu.rs.PutPolicy(config.bucket);
   return putPolicy.token();
@@ -31,7 +30,7 @@ function uploadFile(localFile, cb) {
 }
 
 function downloadFile(src, cb) {
-  var filePath = path.join(getHome(), new Date().getTime().toString());
+  var filePath = path.join(getHome(), getRandomName());
   http_get.get(src, filePath, function(err, result) {
     if (err) {
       return cb(err)
@@ -40,6 +39,13 @@ function downloadFile(src, cb) {
   });
 }
 
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getRandomName() {
+  return new Date().getTime().toString() + getRandomInt(0, 10000);
+}
 
 exports.init = function(options) {
   config = options;
